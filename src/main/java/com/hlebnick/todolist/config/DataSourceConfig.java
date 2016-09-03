@@ -19,7 +19,7 @@ import static com.hlebnick.todolist.config.DataSourceConfig.DataSourceProperty.*
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource({ "classpath:application.properties" })
+@PropertySource({ "classpath:persistence-h2.properties" })
 //@ComponentScan({ "com.hlebnick.todolist" })
 public class DataSourceConfig {
 
