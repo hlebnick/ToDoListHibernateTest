@@ -3,7 +3,7 @@ package com.hlebnick.todolist.entities;
 import javax.persistence.*;
 
 @Entity
-public class ToDoList {
+public class ToDoListEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
