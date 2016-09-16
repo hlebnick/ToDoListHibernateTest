@@ -1,10 +1,12 @@
 package com.hlebnick.todolist.config;
 
+import com.hlebnick.todolist.entities.ToDoListEntity;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.ImprovedNamingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -19,8 +21,8 @@ import static com.hlebnick.todolist.config.DataSourceConfig.DataSourceProperty.*
 
 @Configuration
 @EnableTransactionManagement
-@PropertySource({ "classpath:persistence-h2.properties" })
-//@ComponentScan({ "com.hlebnick.todolist" })
+@PropertySource({"classpath:persistence-h2.properties"})
+@ComponentScan("com.hlebnick.todolist")
 public class DataSourceConfig {
 
     @Autowired
