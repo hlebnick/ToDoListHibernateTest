@@ -64,6 +64,7 @@ public class DataSourceConfig {
                 setProperty("hibernate.default_schema", env.getProperty("hibernate.schema"));
                 setProperty("hibernate.show_sql", "true");
                 setProperty("hibernate.format_sql", "true");
+//                setProperty("hibernate.hbm2ddl.auto", "validate");
             }
         };
     }

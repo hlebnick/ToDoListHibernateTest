@@ -1,8 +1,15 @@
 package com.hlebnick.todolist.entities;
 
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
+
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.util.List;
 
 @Entity
+@Table(name = "to_do_list")
 public class ToDoListEntity {
 
     @Id
@@ -11,6 +18,10 @@ public class ToDoListEntity {
 
     @Column(name = "toDoListName")
     private String name;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "toDoListEntity")
+    @Cascade(CascadeType.SAVE_UPDATE)
+    private List<ToDoItemEntity> items;
 
     public long getId() {
         return id;
@@ -26,5 +37,13 @@ public class ToDoListEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<ToDoItemEntity> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ToDoItemEntity> items) {
+        this.items = items;
     }
 }
